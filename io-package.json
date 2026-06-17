@@ -1,0 +1,101 @@
+{
+  "common": {
+    "name": "iec104",
+    "version": "0.1.5",
+    "news": {
+      "0.1.5": {
+        "en": "Use native table import and export buttons for data point configuration",
+        "de": "Native Tabellen-Import- und Export-Schaltflaechen fuer die Datenpunktkonfiguration verwendet"
+      },
+      "0.1.4": {
+        "en": "Added TSV import and export fields for data point configuration",
+        "de": "TSV-Import und -Export fuer die Datenpunktkonfiguration hinzugefuegt"
+      },
+      "0.1.3": {
+        "en": "Map configured command data points to matching monitoring ASDUs in slave responses",
+        "de": "Konfigurierte Befehls-Datenpunkte werden in Slave-Antworten als passende Melde-ASDUs gesendet"
+      },
+      "0.1.2": {
+        "en": "Update generated data point objects when configuration changes",
+        "de": "Generierte Datenpunkt-Objekte werden bei Konfigurationsänderungen aktualisiert"
+      },
+      "0.1.1": {
+        "en": "Added complete IEC-104 type selection with type numbers and extended parser support",
+        "de": "Vollständige IEC-104 Typauswahl mit Typnummern und erweitertem Parser ergänzt"
+      },
+      "0.1.0": {
+        "en": "Initial IEC 60870-5-104 adapter with master and slave modes",
+        "de": "Erste IEC 60870-5-104 Adapterversion mit Master- und Slave-Modus"
+      }
+    },
+    "titleLang": {
+      "en": "IEC 60870-5-104",
+      "de": "IEC 60870-5-104"
+    },
+    "desc": {
+      "en": "IEC 60870-5-104 master/slave adapter with general interrogation and configurable data points.",
+      "de": "IEC 60870-5-104 Master/Slave-Adapter mit Generalabfrage und konfigurierbaren Datenpunkten."
+    },
+    "authors": [
+      "ioBroker User"
+    ],
+    "keywords": [
+      "iec104",
+      "iec-104",
+      "iec60870",
+      "scada",
+      "telecontrol"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "iec104.svg",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/your-name/ioBroker.iec104/main/admin/iec104.svg",
+    "readme": "https://github.com/your-name/ioBroker.iec104/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "protocols",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.0"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.0.0"
+      }
+    ]
+  },
+  "native": {
+    "mode": "master",
+    "enabled": false,
+    "host": "127.0.0.1",
+    "port": 2404,
+    "bind": "0.0.0.0",
+    "commonAddress": 1,
+    "originatorAddress": 0,
+    "cotSize": 2,
+    "commonAddressSize": 2,
+    "ioaSize": 3,
+    "connectTimeoutMs": 10000,
+    "reconnectDelayMs": 10000,
+    "t1TimeoutMs": 15000,
+    "t2TimeoutMs": 10000,
+    "t3TimeoutMs": 20000,
+    "kWindow": 12,
+    "wWindow": 8,
+    "autoGeneralInterrogation": true,
+    "generalInterrogationIntervalMs": 0,
+    "readOnly": true,
+    "points": []
+  },
+  "objects": [],
+  "instanceObjects": []
+}

@@ -1,0 +1,35 @@
+{
+  "name": "iobroker.iec104",
+  "version": "0.1.5",
+  "description": "ioBroker adapter for IEC 60870-5-104 master and slave communication",
+  "author": "ioBroker User",
+  "homepage": "https://github.com/your-name/ioBroker.iec104",
+  "license": "MIT",
+  "main": "main.js",
+  "keywords": [
+    "iobroker",
+    "iec104",
+    "iec-104",
+    "iec60870",
+    "scada",
+    "telecontrol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-name/ioBroker.iec104.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.2.3"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "test": "node --check main.js"
+  },
+  "bugs": {
+    "url": "https://github.com/your-name/ioBroker.iec104/issues"
+  },
+  "readmeFilename": "README.md"
+}

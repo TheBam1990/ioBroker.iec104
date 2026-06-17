@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="IEC 60870-5-104">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#155e75"/>
+    </linearGradient>
+    <linearGradient id="line" x1="18" y1="70" x2="110" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset=".55" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#facc15"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <path d="M25 78h78" stroke="url(#line)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M35 58v20M64 38v40M93 51v27" stroke="#bae6fd" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="35" cy="58" r="12" fill="#22c55e" stroke="#dcfce7" stroke-width="4"/>
+  <circle cx="64" cy="38" r="12" fill="#38bdf8" stroke="#e0f2fe" stroke-width="4"/>
+  <circle cx="93" cy="51" r="12" fill="#facc15" stroke="#fef9c3" stroke-width="4"/>
+  <path d="M28 93h72" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M43 103h42" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <text x="64" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#e0f2fe">IEC 104</text>
+</svg>

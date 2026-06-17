@@ -1,0 +1,453 @@
+{
+  "type": "tabs",
+  "items": {
+    "connection": {
+      "type": "panel",
+      "label": {
+        "en": "Connection",
+        "de": "Verbindung"
+      },
+      "items": {
+        "enabled": {
+          "type": "checkbox",
+          "label": {
+            "en": "Enable communication",
+            "de": "Kommunikation aktivieren"
+          },
+          "help": {
+            "en": "Keep disabled until all connection and data point settings are checked.",
+            "de": "Deaktiviert lassen, bis Verbindung und Datenpunkte geprüft sind."
+          },
+          "newLine": true,
+          "xs": 12,
+          "sm": 6
+        },
+        "mode": {
+          "type": "select",
+          "label": {
+            "en": "Operating mode",
+            "de": "Betriebsart"
+          },
+          "options": [
+            {
+              "label": {
+                "en": "Master / controlling station",
+                "de": "Master / Leitstelle"
+              },
+              "value": "master"
+            },
+            {
+              "label": {
+                "en": "Slave / controlled station",
+                "de": "Slave / Unterstation"
+              },
+              "value": "slave"
+            }
+          ],
+          "xs": 12,
+          "sm": 6
+        },
+        "host": {
+          "type": "text",
+          "label": {
+            "en": "Remote host",
+            "de": "Gegenstelle"
+          },
+          "help": {
+            "en": "Master mode: IP address or hostname of the IEC-104 slave.",
+            "de": "Master-Modus: IP-Adresse oder Hostname der IEC-104-Unterstation."
+          },
+          "xs": 12,
+          "sm": 6
+        },
+        "port": {
+          "type": "number",
+          "label": {
+            "en": "TCP port",
+            "de": "TCP-Port"
+          },
+          "help": {
+            "en": "Default IEC-104 port is 2404.",
+            "de": "Standard-Port für IEC-104 ist 2404."
+          },
+          "min": 1,
+          "max": 65535,
+          "xs": 12,
+          "sm": 6
+        },
+        "bind": {
+          "type": "text",
+          "label": {
+            "en": "Bind address",
+            "de": "Bind-Adresse"
+          },
+          "help": {
+            "en": "Slave mode: local address to listen on. Use 0.0.0.0 for all interfaces.",
+            "de": "Slave-Modus: lokale Adresse zum Lauschen. 0.0.0.0 nutzt alle Schnittstellen."
+          },
+          "xs": 12,
+          "sm": 6
+        },
+        "readOnly": {
+          "type": "checkbox",
+          "label": {
+            "en": "Read only",
+            "de": "Nur lesen"
+          },
+          "help": {
+            "en": "If enabled, command ASDUs from the remote side are logged and rejected.",
+            "de": "Wenn aktiv, werden Befehls-ASDUs der Gegenstelle protokolliert und abgewiesen."
+          },
+          "xs": 12,
+          "sm": 6
+        }
+      }
+    },
+    "protocol": {
+      "type": "panel",
+      "label": {
+        "en": "Protocol",
+        "de": "Protokoll"
+      },
+      "items": {
+        "commonAddress": {
+          "type": "number",
+          "label": {
+            "en": "Common address",
+            "de": "Stationsadresse"
+          },
+          "min": 0,
+          "max": 65535,
+          "xs": 12,
+          "sm": 6
+        },
+        "originatorAddress": {
+          "type": "number",
+          "label": {
+            "en": "Originator address",
+            "de": "Herkunftsadresse"
+          },
+          "min": 0,
+          "max": 255,
+          "xs": 12,
+          "sm": 6
+        },
+        "cotSize": {
+          "type": "select",
+          "label": {
+            "en": "Cause of transmission length",
+            "de": "Länge der Übertragungsursache"
+          },
+          "options": [
+            { "label": "1", "value": 1 },
+            { "label": "2", "value": 2 }
+          ],
+          "xs": 12,
+          "sm": 4
+        },
+        "commonAddressSize": {
+          "type": "select",
+          "label": {
+            "en": "Common address length",
+            "de": "Länge der Stationsadresse"
+          },
+          "options": [
+            { "label": "1", "value": 1 },
+            { "label": "2", "value": 2 }
+          ],
+          "xs": 12,
+          "sm": 4
+        },
+        "ioaSize": {
+          "type": "select",
+          "label": {
+            "en": "Information object address length",
+            "de": "Länge der Informationsobjektadresse"
+          },
+          "options": [
+            { "label": "1", "value": 1 },
+            { "label": "2", "value": 2 },
+            { "label": "3", "value": 3 }
+          ],
+          "xs": 12,
+          "sm": 4
+        },
+        "autoGeneralInterrogation": {
+          "type": "checkbox",
+          "label": {
+            "en": "General interrogation after connect",
+            "de": "Generalabfrage nach Verbindung"
+          },
+          "help": {
+            "en": "Master mode: send C_IC_NA_1 after STARTDT confirmation.",
+            "de": "Master-Modus: C_IC_NA_1 nach STARTDT-Bestätigung senden."
+          },
+          "xs": 12,
+          "sm": 6
+        },
+        "generalInterrogationIntervalMs": {
+          "type": "number",
+          "label": {
+            "en": "General interrogation interval",
+            "de": "Intervall der Generalabfrage"
+          },
+          "help": {
+            "en": "0 disables periodic general interrogation.",
+            "de": "0 deaktiviert die zyklische Generalabfrage."
+          },
+          "min": 0,
+          "xs": 12,
+          "sm": 6
+        }
+      }
+    },
+    "timing": {
+      "type": "panel",
+      "label": {
+        "en": "Timing",
+        "de": "Zeitverhalten"
+      },
+      "items": {
+        "connectTimeoutMs": {
+          "type": "number",
+          "label": {
+            "en": "Connect timeout",
+            "de": "Verbindungs-Timeout"
+          },
+          "min": 1000,
+          "xs": 12,
+          "sm": 6
+        },
+        "reconnectDelayMs": {
+          "type": "number",
+          "label": {
+            "en": "Reconnect delay",
+            "de": "Wartezeit bis Wiederverbindung"
+          },
+          "min": 1000,
+          "xs": 12,
+          "sm": 6
+        },
+        "t1TimeoutMs": {
+          "type": "number",
+          "label": {
+            "en": "T1 acknowledgement timeout",
+            "de": "T1 Quittierungs-Timeout"
+          },
+          "min": 1000,
+          "xs": 12,
+          "sm": 6
+        },
+        "t2TimeoutMs": {
+          "type": "number",
+          "label": {
+            "en": "T2 acknowledgement delay",
+            "de": "T2 Quittierungsverzögerung"
+          },
+          "min": 1000,
+          "xs": 12,
+          "sm": 6
+        },
+        "t3TimeoutMs": {
+          "type": "number",
+          "label": {
+            "en": "T3 test frame interval",
+            "de": "T3 Testframe-Intervall"
+          },
+          "min": 1000,
+          "xs": 12,
+          "sm": 6
+        },
+        "kWindow": {
+          "type": "number",
+          "label": {
+            "en": "K send window",
+            "de": "K Sendefenster"
+          },
+          "min": 1,
+          "max": 32767,
+          "xs": 12,
+          "sm": 3
+        },
+        "wWindow": {
+          "type": "number",
+          "label": {
+            "en": "W receive window",
+            "de": "W Empfangsfenster"
+          },
+          "min": 1,
+          "max": 32767,
+          "xs": 12,
+          "sm": 3
+        }
+      }
+    },
+    "pointsTab": {
+      "type": "panel",
+      "label": {
+        "en": "Data points",
+        "de": "Datenpunkte"
+      },
+      "items": {
+        "points": {
+          "type": "table",
+          "label": {
+            "en": "Configured data points",
+            "de": "Konfigurierte Datenpunkte"
+          },
+          "import": true,
+          "export": true,
+          "showSecondAddAt": 10,
+          "items": [
+            {
+              "attr": "enabled",
+              "type": "checkbox",
+              "title": {
+                "en": "Active",
+                "de": "Aktiv"
+              },
+              "default": true,
+              "width": "70px"
+            },
+            {
+              "attr": "name",
+              "type": "text",
+              "title": {
+                "en": "Name",
+                "de": "Name"
+              },
+              "width": "170px"
+            },
+            {
+              "attr": "ioa",
+              "type": "number",
+              "title": {
+                "en": "IOA",
+                "de": "IOA"
+              },
+              "width": "100px"
+            },
+            {
+              "attr": "type",
+              "type": "select",
+              "title": {
+                "en": "Type",
+                "de": "Typ"
+              },
+              "width": "170px",
+              "options": [
+                { "label": "M_SP_NA_1 (1) Single Point Information / Einzelmeldung (0/1)", "value": "M_SP_NA_1" },
+                { "label": "M_SP_TA_1 (2) Single Point with Time Tag / Einzelmeldung mit Zeitstempel", "value": "M_SP_TA_1" },
+                { "label": "M_DP_NA_1 (3) Double Point Information / Doppelmeldung", "value": "M_DP_NA_1" },
+                { "label": "M_DP_TA_1 (4) Double Point with Time Tag / Doppelmeldung mit Zeitstempel", "value": "M_DP_TA_1" },
+                { "label": "M_ST_NA_1 (5) Step Position Information / Stufenstellung", "value": "M_ST_NA_1" },
+                { "label": "M_ST_TA_1 (6) Step Position with Time Tag / Stufenstellung mit Zeit", "value": "M_ST_TA_1" },
+                { "label": "M_BO_NA_1 (7) Bitstring 32 Bit / 32-Bit Bitfolge", "value": "M_BO_NA_1" },
+                { "label": "M_BO_TA_1 (8) Bitstring with Time Tag / Bitfolge mit Zeit", "value": "M_BO_TA_1" },
+                { "label": "M_ME_NA_1 (9) Measured Value Normalized / Normierter Messwert (-1..+1)", "value": "M_ME_NA_1" },
+                { "label": "M_ME_TA_1 (10) Measured Value Normalized + Time / Normiert mit Zeit", "value": "M_ME_TA_1" },
+                { "label": "M_ME_NB_1 (11) Measured Value Scaled / Skalierter Messwert", "value": "M_ME_NB_1" },
+                { "label": "M_ME_TB_1 (12) Measured Value Scaled + Time / Skaliert mit Zeit", "value": "M_ME_TB_1" },
+                { "label": "M_ME_NC_1 (13) Measured Value Short Float / Float (IEEE754)", "value": "M_ME_NC_1" },
+                { "label": "M_ME_TC_1 (14) Measured Value Float + Time / Float mit Zeit", "value": "M_ME_TC_1" },
+                { "label": "M_IT_NA_1 (15) Integrated Total / Zählerstand", "value": "M_IT_NA_1" },
+                { "label": "M_IT_TA_1 (16) Integrated Total + Time / Zählerstand mit Zeit", "value": "M_IT_TA_1" },
+                { "label": "M_EP_TA_1 (17) Event Protection / Schutzereignis", "value": "M_EP_TA_1" },
+                { "label": "M_EP_TB_1 (18) Packed Protection Event / Schutzereignis", "value": "M_EP_TB_1" },
+                { "label": "M_EP_TC_1 (19) Protection Command / Schutzkommando", "value": "M_EP_TC_1" },
+                { "label": "M_PS_NA_1 (20) Packed Single Point / Gepackte Meldungen", "value": "M_PS_NA_1" },
+                { "label": "M_SP_TB_1 (30) Single Point + CP56", "value": "M_SP_TB_1" },
+                { "label": "M_DP_TB_1 (31) Double Point + CP56", "value": "M_DP_TB_1" },
+                { "label": "M_ST_TB_1 (32) Step Position + CP56", "value": "M_ST_TB_1" },
+                { "label": "M_BO_TB_1 (33) Bitstring + CP56", "value": "M_BO_TB_1" },
+                { "label": "M_ME_TD_1 (34) Normalized + CP56", "value": "M_ME_TD_1" },
+                { "label": "M_ME_TE_1 (35) Scaled + CP56", "value": "M_ME_TE_1" },
+                { "label": "M_ME_TF_1 (36) Float + CP56", "value": "M_ME_TF_1" },
+                { "label": "M_IT_TB_1 (37) Counter + CP56", "value": "M_IT_TB_1" },
+                { "label": "M_EP_TD_1 (38) Protection Event + CP56", "value": "M_EP_TD_1" },
+                { "label": "M_EP_TE_1 (39) Packed Protection + CP56", "value": "M_EP_TE_1" },
+                { "label": "M_EP_TF_1 (40) Protection Command + CP56", "value": "M_EP_TF_1" },
+                { "label": "C_SC_NA_1 (45) Single Command", "value": "C_SC_NA_1" },
+                { "label": "C_DC_NA_1 (46) Double Command", "value": "C_DC_NA_1" },
+                { "label": "C_RC_NA_1 (47) Regulating Step Command", "value": "C_RC_NA_1" },
+                { "label": "C_SE_NA_1 (48) Setpoint Normalized", "value": "C_SE_NA_1" },
+                { "label": "C_SE_NB_1 (49) Setpoint Scaled", "value": "C_SE_NB_1" },
+                { "label": "C_SE_NC_1 (50) Setpoint Float", "value": "C_SE_NC_1" },
+                { "label": "C_BO_NA_1 (51) Bitstring Command", "value": "C_BO_NA_1" },
+                { "label": "C_SC_TA_1 (58) Single Command + Time", "value": "C_SC_TA_1" },
+                { "label": "C_DC_TA_1 (59) Double Command + Time", "value": "C_DC_TA_1" },
+                { "label": "C_RC_TA_1 (60) Regulating Command + Time", "value": "C_RC_TA_1" },
+                { "label": "C_SE_TA_1 (61) Setpoint Normalized + Time", "value": "C_SE_TA_1" },
+                { "label": "C_SE_TB_1 (62) Setpoint Scaled + Time", "value": "C_SE_TB_1" },
+                { "label": "C_SE_TC_1 (63) Setpoint Float + Time", "value": "C_SE_TC_1" },
+                { "label": "C_BO_TA_1 (64) Bitstring Command + Time", "value": "C_BO_TA_1" },
+                { "label": "C_IC_NA_1 (100) General Interrogation", "value": "C_IC_NA_1" },
+                { "label": "C_CI_NA_1 (101) Counter Interrogation", "value": "C_CI_NA_1" },
+                { "label": "C_RD_NA_1 (102) Read Command", "value": "C_RD_NA_1" },
+                { "label": "C_CS_NA_1 (103) Clock Synchronization", "value": "C_CS_NA_1" },
+                { "label": "C_TS_NA_1 (104) Test Command", "value": "C_TS_NA_1" },
+                { "label": "C_RP_NA_1 (105) Reset Process", "value": "C_RP_NA_1" },
+                { "label": "C_CD_NA_1 (106) Delay Acquisition", "value": "C_CD_NA_1" },
+                { "label": "F_FR_NA_1 (120) File Ready", "value": "F_FR_NA_1" },
+                { "label": "F_SR_NA_1 (121) Section Ready", "value": "F_SR_NA_1" },
+                { "label": "F_SC_NA_1 (122) Call Directory", "value": "F_SC_NA_1" },
+                { "label": "F_LS_NA_1 (123) Last Section", "value": "F_LS_NA_1" },
+                { "label": "F_AF_NA_1 (124) Ack File", "value": "F_AF_NA_1" },
+                { "label": "F_SG_NA_1 (125) Segment", "value": "F_SG_NA_1" },
+                { "label": "F_DR_TA_1 (126) Directory", "value": "F_DR_TA_1" }
+              ]
+            },
+            {
+              "attr": "stateId",
+              "type": "text",
+              "title": {
+                "en": "ioBroker state",
+                "de": "ioBroker-State"
+              },
+              "width": "260px"
+            },
+            {
+              "attr": "writable",
+              "type": "checkbox",
+              "title": {
+                "en": "Writable",
+                "de": "Schreibbar"
+              },
+              "default": false,
+              "width": "90px"
+            },
+            {
+              "attr": "unit",
+              "type": "text",
+              "title": {
+                "en": "Unit",
+                "de": "Einheit"
+              },
+              "width": "90px"
+            },
+            {
+              "attr": "factor",
+              "type": "number",
+              "title": {
+                "en": "Factor",
+                "de": "Faktor"
+              },
+              "default": 1,
+              "width": "90px"
+            },
+            {
+              "attr": "offset",
+              "type": "number",
+              "title": {
+                "en": "Offset",
+                "de": "Offset"
+              },
+              "default": 0,
+              "width": "90px"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
