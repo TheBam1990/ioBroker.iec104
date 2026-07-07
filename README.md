@@ -40,6 +40,10 @@ The adapter also stores received points below `ASDU-<address>` so values from di
 
 ## Changelog
 
+### 0.1.20
+
+- Replaced plain Node.js timers with ioBroker adapter timer helpers.
+
 ### 0.1.19
 
 - Removed old unpublished changelog entries from `io-package.json`.

@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "iec104",
-    "version": "0.1.19",
+    "version": "0.1.20",
     "news": {
+      "0.1.20": {
+        "en": "Uses ioBroker adapter timer helpers instead of plain Node.js timers",
+        "de": "Verwendet ioBroker-Adapter-Timer-Helfer statt direkter Node.js-Timer",
+        "ru": "Используются таймеры адаптера ioBroker вместо прямых таймеров Node.js",
+        "pt": "Usa os auxiliares de temporizador do adaptador ioBroker em vez dos temporizadores diretos do Node.js",
+        "nl": "Gebruikt ioBroker adaptertimerhulpen in plaats van directe Node.js timers",
+        "fr": "Utilise les assistants de minuterie de l'adaptateur ioBroker au lieu des timers Node.js directs",
+        "it": "Usa gli helper timer dell'adapter ioBroker invece dei timer diretti di Node.js",
+        "es": "Usa los temporizadores del adaptador ioBroker en lugar de temporizadores directos de Node.js",
+        "pl": "Uzywa pomocniczych timerow adaptera ioBroker zamiast bezposrednich timerow Node.js",
+        "uk": "Використовуються таймери адаптера ioBroker замість прямих таймерів Node.js",
+        "zh-cn": "使用 ioBroker 适配器计时器辅助方法替代直接的 Node.js 计时器"
+      },
       "0.1.19": {
         "en": "Removes old unpublished changelog entries and fixes the responsive table metadata for adapter checker compatibility",
         "de": "Entfernt alte unveroeffentlichte Changelog-Eintraege und korrigiert die responsive Tabellen-Metadaten fuer die Adapter-Checker-Kompatibilitaet",

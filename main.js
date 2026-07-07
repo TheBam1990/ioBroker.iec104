@@ -261,7 +261,7 @@ class Iec104Connection {
 
     startTimers() {
         this.stopTimers();
-        this.t3Timer = setInterval(() => {
+        this.t3Timer = this.adapter.setInterval(() => {
             if (this.closed) return;
             if (Date.now() - this.lastRx >= this.cfg.t3TimeoutMs) {
                 this.sendU(0x43);
@@ -270,8 +270,8 @@ class Iec104Connection {
     }
 
     stopTimers() {
-        if (this.t3Timer) clearInterval(this.t3Timer);
-        if (this.t2Timer) clearTimeout(this.t2Timer);
+        if (this.t3Timer) this.adapter.clearInterval(this.t3Timer);
+        if (this.t2Timer) this.adapter.clearTimeout(this.t2Timer);
         this.t3Timer = null;
         this.t2Timer = null;
     }
@@ -369,7 +369,7 @@ class Iec104Connection {
 
     scheduleAck() {
         if (this.t2Timer) return;
-        this.t2Timer = setTimeout(() => {
+        this.t2Timer = this.adapter.setTimeout(() => {
             this.t2Timer = null;
             if (!this.closed) this.sendS();
         }, this.cfg.t2TimeoutMs);
@@ -501,9 +501,9 @@ class Iec104Adapter extends utils.Adapter {
 
     onUnload(callback) {
         try {
-            if (this.reconnectTimer) clearTimeout(this.reconnectTimer);
-            if (this.generalInterrogationTimer) clearInterval(this.generalInterrogationTimer);
-            if (this.discoveredConfigTimer) clearTimeout(this.discoveredConfigTimer);
+            if (this.reconnectTimer) this.clearTimeout(this.reconnectTimer);
+            if (this.generalInterrogationTimer) this.clearInterval(this.generalInterrogationTimer);
+            if (this.discoveredConfigTimer) this.clearTimeout(this.discoveredConfigTimer);
             if (this.connection) this.connection.close();
             if (this.server) this.server.close();
             callback();
@@ -764,14 +764,14 @@ class Iec104Adapter extends utils.Adapter {
         this.log.debug(`Starting IEC-104 master client to ${cfg.host}:${cfg.port}`);
         const socket = net.createConnection({ host: cfg.host, port: cfg.port });
         let connected = false;
-        const connectTimer = setTimeout(() => {
+        const connectTimer = this.setTimeout(() => {
             this.log.warn(`IEC-104 connect timeout to ${cfg.host}:${cfg.port}`);
             socket.destroy();
         }, cfg.connectTimeoutMs);
 
         socket.on("connect", () => {
             connected = true;
-            clearTimeout(connectTimer);
+            this.clearTimeout(connectTimer);
             this.connection = this.createConnection(socket, "master");
             this.connection.onStarted = conn => {
                 void this.setStateAsync("info.connection", true, true);
@@ -782,11 +782,11 @@ class Iec104Adapter extends utils.Adapter {
         });
 
         socket.on("error", error => {
-            clearTimeout(connectTimer);
+            this.clearTimeout(connectTimer);
             this.log.warn(`IEC-104 master socket error: ${error.message}`);
         });
         socket.on("close", () => {
-            clearTimeout(connectTimer);
+            this.clearTimeout(connectTimer);
             if (!connected || !this.connection) {
                 void this.setStateAsync("info.connection", false, true);
                 if (this.protocolConfig.mode === "master" && this.protocolConfig.enabled) this.scheduleReconnect();
@@ -824,7 +824,7 @@ class Iec104Adapter extends utils.Adapter {
             void this.setStateAsync("info.connection", false, true);
             if (this.connection === conn) this.connection = null;
             if (this.generalInterrogationTimer) {
-                clearInterval(this.generalInterrogationTimer);
+                this.clearInterval(this.generalInterrogationTimer);
                 this.generalInterrogationTimer = null;
             }
             if (this.protocolConfig.mode === "master" && this.protocolConfig.enabled) {
@@ -836,17 +836,17 @@ class Iec104Adapter extends utils.Adapter {
 
     scheduleReconnect() {
         if (this.reconnectTimer) return;
-        this.reconnectTimer = setTimeout(() => {
+        this.reconnectTimer = this.setTimeout(() => {
             this.reconnectTimer = null;
             this.startMaster();
         }, this.protocolConfig.reconnectDelayMs);
     }
 
     startGeneralInterrogationTimer() {
-        if (this.generalInterrogationTimer) clearInterval(this.generalInterrogationTimer);
+        if (this.generalInterrogationTimer) this.clearInterval(this.generalInterrogationTimer);
         const interval = this.protocolConfig.generalInterrogationIntervalMs;
         if (interval > 0) {
-            this.generalInterrogationTimer = setInterval(() => {
+            this.generalInterrogationTimer = this.setInterval(() => {
                 if (this.connection && this.connection.started) this.sendGeneralInterrogation(this.connection);
             }, interval);
         }
@@ -1007,8 +1007,8 @@ class Iec104Adapter extends utils.Adapter {
 
     scheduleDiscoveredPointConfigUpdate(point) {
         this.discoveredPointsToPersist.set(Number(point.ioa), { ...point });
-        if (this.discoveredConfigTimer) clearTimeout(this.discoveredConfigTimer);
-        this.discoveredConfigTimer = setTimeout(() => {
+        if (this.discoveredConfigTimer) this.clearTimeout(this.discoveredConfigTimer);
+        this.discoveredConfigTimer = this.setTimeout(() => {
             this.discoveredConfigTimer = null;
             this.persistDiscoveredPointsToConfig().catch(error => {
                 this.log.warn(`Cannot persist discovered IEC-104 data points: ${error.message}`);
