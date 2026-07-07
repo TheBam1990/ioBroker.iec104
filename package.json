@@ -1,9 +1,9 @@
 {
   "name": "iobroker.iec104",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "ioBroker adapter for IEC 60870-5-104 master and slave communication",
-  "author": "ioBroker User",
-  "homepage": "https://github.com/your-name/ioBroker.iec104",
+  "author": "TheBam1990",
+  "homepage": "https://github.com/TheBam1990/ioBroker.iec104",
   "license": "MIT",
   "main": "main.js",
   "files": [
@@ -21,6 +21,7 @@
     "win32"
   ],
   "keywords": [
+    "ioBroker",
     "iobroker",
     "iec104",
     "iec-104",
@@ -30,20 +31,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-name/ioBroker.iec104.git"
+    "url": "https://github.com/TheBam1990/ioBroker.iec104.git"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.2.3"
+    "@iobroker/adapter-core": "^3.4.1"
+  },
+  "devDependencies": {
+    "@iobroker/testing": "^5.2.2",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^22.17.0"
   },
   "scripts": {
     "start": "node main.js",
-    "test": "node --check main.js"
+    "test": "node --check main.js",
+    "lint": "node --check main.js"
   },
   "bugs": {
-    "url": "https://github.com/your-name/ioBroker.iec104/issues"
+    "url": "https://github.com/TheBam1990/ioBroker.iec104/issues"
   },
   "readmeFilename": "README.md"
 }

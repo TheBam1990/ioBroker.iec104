@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "iec104",
-    "version": "0.1.17",
+    "version": "0.1.18",
     "news": {
+      "0.1.18": {
+        "en": "Adds repository metadata, CI release automation and adapter checker compatibility for public ioBroker publication",
+        "de": "Fuegt Repository-Metadaten, CI-Release-Automatisierung und Adapter-Checker-Kompatibilitaet fuer die oeffentliche ioBroker-Veroeffentlichung hinzu",
+        "ru": "Добавлены метаданные репозитория, автоматизация CI-релиза и совместимость с adapter checker для публикации ioBroker",
+        "pt": "Adiciona metadados do repositorio, automacao de lancamento CI e compatibilidade com adapter checker para publicacao no ioBroker",
+        "nl": "Voegt repositorymetadata, CI-releaseautomatisering en adapter-checker compatibiliteit toe voor ioBroker-publicatie",
+        "fr": "Ajoute les metadonnees du depot, l'automatisation CI des versions et la compatibilite adapter checker pour la publication ioBroker",
+        "it": "Aggiunge metadati del repository, automazione CI dei rilasci e compatibilita con adapter checker per la pubblicazione ioBroker",
+        "es": "Anade metadatos del repositorio, automatizacion CI de versiones y compatibilidad con adapter checker para publicar en ioBroker",
+        "pl": "Dodaje metadane repozytorium, automatyzacje wydan CI i zgodnosc z adapter checker dla publikacji ioBroker",
+        "uk": "Додано метадані репозиторію, автоматизацію CI-релізів і сумісність з adapter checker для публікації ioBroker",
+        "zh-cn": "添加仓库元数据、CI 发布自动化以及用于 ioBroker 发布的 adapter checker 兼容性"
+      },
       "0.1.17": {
         "en": "Reorganize states by ASDU with Value/IV/NT/Time/COT folders, expose NT quality and COT text states, and improve master reconnect handling",
         "de": "Ordnet States nach ASDU mit Value/IV/NT/Time/COT-Ordnern, stellt NT-Quality und COT-Klartext bereit und verbessert den Master-Reconnect"
@@ -26,84 +39,58 @@
       "0.1.12": {
         "en": "Declare Windows support and make npm package contents explicit",
         "de": "Windows-Unterstuetzung deklariert und npm-Paketinhalt explizit festgelegt"
-      },
-      "0.1.11": {
-        "en": "Move normal IEC-104 operation diagnostics from info to debug logging",
-        "de": "Normale IEC-104 Betriebsdiagnosen von Info- auf Debug-Logging umgestellt"
-      },
-      "0.1.10": {
-        "en": "Remember received common addresses per IOA and use them for master commands",
-        "de": "Empfangene Common Addresses werden je IOA gemerkt und fuer Master-Befehle verwendet"
-      },
-      "0.1.9": {
-        "en": "Log master command confirmations and acknowledge states after activation confirmation",
-        "de": "Master-Befehlsbestaetigungen werden protokolliert und States nach Aktivierungsbestaetigung quittiert"
-      },
-      "0.1.8": {
-        "en": "Add diagnostics for master write commands and configured data point subscriptions",
-        "de": "Diagnosemeldungen fuer Master-Schreibbefehle und abonnierte Datenpunkte ergaenzt"
-      },
-      "0.1.7": {
-        "en": "Send IEC-104 command ASDUs when master data point states are changed",
-        "de": "IEC-104 Befehls-ASDUs werden gesendet, wenn Datenpunkte im Master geaendert werden"
-      },
-      "0.1.6": {
-        "en": "Add automatically discovered master data points to the adapter settings table",
-        "de": "Automatisch gefundene Master-Datenpunkte werden in die Adapter-Einstellungstabelle uebernommen"
-      },
-      "0.1.5": {
-        "en": "Use native table import and export buttons for data point configuration",
-        "de": "Native Tabellen-Import- und Export-Schaltflaechen fuer die Datenpunktkonfiguration verwendet"
-      },
-      "0.1.4": {
-        "en": "Added TSV import and export fields for data point configuration",
-        "de": "TSV-Import und -Export fuer die Datenpunktkonfiguration hinzugefuegt"
-      },
-      "0.1.3": {
-        "en": "Map configured command data points to matching monitoring ASDUs in slave responses",
-        "de": "Konfigurierte Befehls-Datenpunkte werden in Slave-Antworten als passende Melde-ASDUs gesendet"
-      },
-      "0.1.2": {
-        "en": "Update generated data point objects when configuration changes",
-        "de": "Generierte Datenpunkt-Objekte werden bei Konfigurationsänderungen aktualisiert"
-      },
-      "0.1.1": {
-        "en": "Added complete IEC-104 type selection with type numbers and extended parser support",
-        "de": "Vollständige IEC-104 Typauswahl mit Typnummern und erweitertem Parser ergänzt"
-      },
-      "0.1.0": {
-        "en": "Initial IEC 60870-5-104 adapter with master and slave modes",
-        "de": "Erste IEC 60870-5-104 Adapterversion mit Master- und Slave-Modus"
       }
     },
     "titleLang": {
       "en": "IEC 60870-5-104",
-      "de": "IEC 60870-5-104"
+      "de": "IEC 60870-5-104",
+      "ru": "IEC 60870-5-104",
+      "pt": "IEC 60870-5-104",
+      "nl": "IEC 60870-5-104",
+      "fr": "IEC 60870-5-104",
+      "it": "IEC 60870-5-104",
+      "es": "IEC 60870-5-104",
+      "pl": "IEC 60870-5-104",
+      "uk": "IEC 60870-5-104",
+      "zh-cn": "IEC 60870-5-104"
     },
     "desc": {
       "en": "IEC 60870-5-104 master/slave adapter with general interrogation and configurable data points.",
-      "de": "IEC 60870-5-104 Master/Slave-Adapter mit Generalabfrage und konfigurierbaren Datenpunkten."
+      "de": "IEC 60870-5-104 Master/Slave-Adapter mit Generalabfrage und konfigurierbaren Datenpunkten.",
+      "ru": "Адаптер IEC 60870-5-104 master/slave с общим опросом и настраиваемыми точками данных.",
+      "pt": "Adaptador IEC 60870-5-104 master/slave com interrogacao geral e pontos de dados configuraveis.",
+      "nl": "IEC 60870-5-104 master/slave-adapter met algemene ondervraging en configureerbare datapunten.",
+      "fr": "Adaptateur IEC 60870-5-104 maitre/esclave avec interrogation generale et points de donnees configurables.",
+      "it": "Adapter IEC 60870-5-104 master/slave con interrogazione generale e punti dati configurabili.",
+      "es": "Adaptador IEC 60870-5-104 maestro/esclavo con interrogacion general y puntos de datos configurables.",
+      "pl": "Adapter IEC 60870-5-104 master/slave z odpytywaniem ogolnym i konfigurowalnymi punktami danych.",
+      "uk": "Адаптер IEC 60870-5-104 master/slave із загальним опитуванням і налаштовуваними точками даних.",
+      "zh-cn": "IEC 60870-5-104 主站/从站适配器，支持总召唤和可配置数据点。"
     },
     "authors": [
-      "ioBroker User"
+      "TheBam1990"
     ],
     "keywords": [
+      "ioBroker",
       "iec104",
       "iec-104",
       "iec60870",
       "scada",
       "telecontrol"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "iec104.svg",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/your-name/ioBroker.iec104/main/admin/iec104.svg",
-    "readme": "https://github.com/your-name/ioBroker.iec104/blob/main/README.md",
+    "extIcon": "https://raw.githubusercontent.com/TheBam1990/ioBroker.iec104/main/admin/iec104.svg",
+    "readme": "https://github.com/TheBam1990/ioBroker.iec104/blob/main/README.md",
     "loglevel": "info",
     "mode": "daemon",
     "type": "protocols",
+    "tier": 3,
     "compact": true,
     "connectionType": "local",
     "dataSource": "push",
@@ -112,12 +99,12 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.0"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.0.0"
+        "admin": ">=7.6.20"
       }
     ]
   },
