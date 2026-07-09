@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "iec104",
-    "version": "0.1.20",
+    "version": "0.1.21",
     "news": {
+      "0.1.21": {
+        "en": "Fixes ioBroker repochecker metadata, package checks, jsonConfig i18n handling and release automation.",
+        "de": "Behebt ioBroker-Repochecker-Metadaten, Paketpruefungen, jsonConfig-i18n und Release-Automatisierung.",
+        "ru": "Исправлены метаданные ioBroker repochecker, проверки пакета, i18n jsonConfig и автоматизация релиза.",
+        "pt": "Corrige metadados do ioBroker repochecker, verificacoes de pacote, i18n do jsonConfig e automacao de release.",
+        "nl": "Corrigeert ioBroker repochecker-metadata, pakketcontroles, jsonConfig-i18n en release-automatisering.",
+        "fr": "Corrige les metadonnees ioBroker repochecker, les controles du paquet, i18n jsonConfig et l automatisation des versions.",
+        "it": "Corregge metadati ioBroker repochecker, controlli pacchetto, i18n jsonConfig e automazione dei rilasci.",
+        "es": "Corrige metadatos de ioBroker repochecker, comprobaciones del paquete, i18n de jsonConfig y automatizacion de releases.",
+        "pl": "Poprawia metadane ioBroker repochecker, kontrole pakietu, i18n jsonConfig i automatyzacje wydan.",
+        "uk": "Виправлено метадані ioBroker repochecker, перевірки пакета, i18n jsonConfig і автоматизацію релізів.",
+        "zh-cn": "修复 ioBroker repochecker 元数据、包检查、jsonConfig i18n 和发布自动化。"
+      },
       "0.1.20": {
         "en": "Uses ioBroker adapter timer helpers instead of plain Node.js timers",
         "de": "Verwendet ioBroker-Adapter-Timer-Helfer statt direkter Node.js-Timer",
