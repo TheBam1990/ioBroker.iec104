@@ -31,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheBam1990/ioBroker.iec104.git"
+    "url": "git+https://github.com/TheBam1990/ioBroker.iec104.git"
   },
   "engines": {
     "node": ">=22"
@@ -40,6 +40,12 @@
     "@iobroker/adapter-core": "^3.4.1"
   },
   "devDependencies": {
+    "@alcalzone/release-script": "^5.2.1",
+    "@alcalzone/release-script-plugin-iobroker": "^5.2.0",
+    "@alcalzone/release-script-plugin-license": "^5.2.0",
+    "@alcalzone/release-script-plugin-manual-review": "^5.2.0",
+    "@iobroker/adapter-dev": "^1.5.0",
+    "@iobroker/eslint-config": "^2.3.4",
     "@iobroker/testing": "^5.2.2",
     "@tsconfig/node22": "^22.0.5",
     "@types/node": "^22.17.0"
@@ -47,7 +53,10 @@
   "scripts": {
     "start": "node main.js",
     "test": "node --check main.js",
-    "lint": "node --check main.js"
+    "lint": "node --check main.js",
+    "test:package": "mocha test/package --exit",
+    "test:integration": "mocha test/integration --exit",
+    "release": "release-script"
   },
   "bugs": {
     "url": "https://github.com/TheBam1990/ioBroker.iec104/issues"
