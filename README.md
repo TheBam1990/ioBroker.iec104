@@ -40,6 +40,11 @@ The adapter also stores received points below `ASDU-<address>` so values from di
 
 ## Changelog
 
+### 0.1.22
+
+- Assigned valid ioBroker roles to read-only and writable IEC-104 points.
+- Restored the standard ioBroker test-and-release deployment workflow.
+
 ### 0.1.21
 
 - Fixed ioBroker repochecker metadata, package checks, jsonConfig i18n handling and release automation.

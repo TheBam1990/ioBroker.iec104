@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "iec104",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "news": {
+      "0.1.22": {
+        "en": "Uses valid read/write roles for IEC-104 data points and restores the standard ioBroker release workflow.",
+        "de": "Verwendet gueltige Lese-/Schreibrollen fuer IEC-104-Datenpunkte und stellt den Standard-ioBroker-Release-Workflow wieder her.",
+        "ru": "Использует корректные роли чтения и записи для точек IEC-104 и восстанавливает стандартный процесс выпуска ioBroker.",
+        "pt": "Usa funcoes validas de leitura e escrita para pontos IEC-104 e restaura o fluxo de lancamento padrao do ioBroker.",
+        "nl": "Gebruikt geldige lees-/schrijfrollen voor IEC-104-datapunten en herstelt de standaard ioBroker-releaseworkflow.",
+        "fr": "Utilise des roles de lecture/ecriture valides pour les points IEC-104 et retablit le workflow de publication ioBroker standard.",
+        "it": "Usa ruoli di lettura/scrittura validi per i punti IEC-104 e ripristina il workflow di rilascio ioBroker standard.",
+        "es": "Usa roles validos de lectura/escritura para puntos IEC-104 y restaura el flujo de publicacion estandar de ioBroker.",
+        "pl": "Uzywa prawidlowych rol odczytu/zapisu dla punktow IEC-104 i przywraca standardowy proces wydan ioBroker.",
+        "uk": "Використовує коректні ролі читання/запису для точок IEC-104 і відновлює стандартний процес випуску ioBroker.",
+        "zh-cn": "为 IEC-104 数据点使用有效的读写角色，并恢复标准 ioBroker 发布工作流。"
+      },
       "0.1.21": {
         "en": "Fixes ioBroker repochecker metadata, package checks, jsonConfig i18n handling and release automation.",
         "de": "Behebt ioBroker-Repochecker-Metadaten, Paketpruefungen, jsonConfig-i18n und Release-Automatisierung.",

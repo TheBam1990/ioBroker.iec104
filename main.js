@@ -2,6 +2,7 @@
 
 const net = require("node:net");
 const utils = require("@iobroker/adapter-core");
+const { roleForJsType } = require("./lib/roles");
 
 const TYPE = {
     M_SP_NA_1: 1,
@@ -636,15 +637,16 @@ class Iec104Adapter extends utils.Adapter {
             const id = this.stateIdForPoint(point);
             await this.ensurePointChannels(point);
             if (this.isOwnStateId(id)) {
+                const writable = point.writable || this.protocolConfig.mode === "master";
                 await this.extendObjectAsync(id.replace(`${this.namespace}.`, ""), {
                     type: "state",
                     common: {
                         name: point.name,
                         type: this.jsTypeForPoint(point),
-                        role: this.roleForPoint(point),
+                        role: this.roleForPoint(point, writable),
                         unit: point.unit || "",
                         read: true,
-                        write: point.writable || this.protocolConfig.mode === "master",
+                        write: writable,
                     },
                     native: { ioa: point.ioa, iecType: point.type },
                 });
@@ -752,11 +754,8 @@ class Iec104Adapter extends utils.Adapter {
         return "number";
     }
 
-    roleForPoint(point) {
-        const meta = TYPE_META[point.type];
-        if (meta && meta.command) return "level";
-        if (meta && meta.valueKind === "boolean") return "state";
-        return "value";
+    roleForPoint(point, writable = false) {
+        return roleForJsType(this.jsTypeForPoint(point), writable);
     }
 
     startMaster() {
@@ -979,7 +978,7 @@ class Iec104Adapter extends utils.Adapter {
                 common: {
                     name: point.name,
                     type: this.jsTypeForPoint(point),
-                    role: this.roleForPoint(point),
+                    role: this.roleForPoint(point, true),
                     unit: "",
                     read: true,
                     write: true,

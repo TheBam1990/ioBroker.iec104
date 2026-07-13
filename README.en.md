@@ -172,6 +172,11 @@ Commands are not executed:
 
 ## Changelog
 
+### 0.1.22
+
+- Assigns valid ioBroker roles to read-only and writable IEC-104 points.
+- Restores the standard ioBroker test-and-release deployment workflow.
+
 ### 0.1.17
 
 - Reorganizes states by ASDU with Value/IV/NT/Time/COT folders.

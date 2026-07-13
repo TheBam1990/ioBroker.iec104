@@ -172,6 +172,11 @@ Befehle werden nicht ausgefuehrt:
 
 ## Changelog
 
+### 0.1.22
+
+- Weist lesbaren und schreibbaren IEC-104-Datenpunkten gueltige ioBroker-Rollen zu.
+- Stellt den Standard-ioBroker-Test-and-Release-Workflow wieder her.
+
 ### 0.1.17
 
 - Ordnet States nach ASDU mit Value/IV/NT/Time/COT-Ordnern.
