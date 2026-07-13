@@ -172,6 +172,10 @@ Commands are not executed:
 
 ## Changelog
 
+### 0.1.24
+
+- Completes all Admin UI translations using short-format i18n files.
+
 ### 0.1.23
 
 - Publishes the point-role fix with npm provenance through the standard ioBroker release workflow.

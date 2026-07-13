@@ -3,18 +3,12 @@
   "items": {
     "connection": {
       "type": "panel",
-      "label": {
-        "en": "Connection"
-      },
+      "label": "Connection",
       "items": {
         "enabled": {
           "type": "checkbox",
-          "label": {
-            "en": "Enable communication"
-          },
-          "help": {
-            "en": "Keep disabled until all connection and data point settings are checked."
-          },
+          "label": "Enable communication",
+          "help": "Keep disabled until all connection and data point settings are checked.",
           "newLine": true,
           "xs": 12,
           "sm": 6,
@@ -24,9 +18,7 @@
         },
         "mode": {
           "type": "select",
-          "label": {
-            "en": "Operating mode"
-          },
+          "label": "Operating mode",
           "options": [
             {
               "label": "Master / controlling station",
@@ -45,12 +37,8 @@
         },
         "host": {
           "type": "text",
-          "label": {
-            "en": "Remote host"
-          },
-          "help": {
-            "en": "Master mode: IP address or hostname of the IEC-104 slave."
-          },
+          "label": "Remote host",
+          "help": "Master mode: IP address or hostname of the IEC-104 slave.",
           "xs": 12,
           "sm": 6,
           "md": 6,
@@ -59,12 +47,8 @@
         },
         "port": {
           "type": "number",
-          "label": {
-            "en": "TCP port"
-          },
-          "help": {
-            "en": "Default IEC-104 port is 2404."
-          },
+          "label": "TCP port",
+          "help": "Default IEC-104 port is 2404.",
           "min": 1,
           "max": 65535,
           "xs": 12,
@@ -75,12 +59,8 @@
         },
         "bind": {
           "type": "text",
-          "label": {
-            "en": "Bind address"
-          },
-          "help": {
-            "en": "Slave mode: local address to listen on. Use 0.0.0.0 for all interfaces."
-          },
+          "label": "Bind address",
+          "help": "Slave mode: local address to listen on. Use 0.0.0.0 for all interfaces.",
           "xs": 12,
           "sm": 6,
           "md": 6,
@@ -89,12 +69,8 @@
         },
         "readOnly": {
           "type": "checkbox",
-          "label": {
-            "en": "Read only"
-          },
-          "help": {
-            "en": "If enabled, command ASDUs from the remote side are logged and rejected."
-          },
+          "label": "Read only",
+          "help": "If enabled, command ASDUs from the remote side are logged and rejected.",
           "xs": 12,
           "sm": 6,
           "md": 6,
@@ -105,15 +81,11 @@
     },
     "protocol": {
       "type": "panel",
-      "label": {
-        "en": "Protocol"
-      },
+      "label": "Protocol",
       "items": {
         "commonAddress": {
           "type": "number",
-          "label": {
-            "en": "Common address"
-          },
+          "label": "Common address",
           "min": 0,
           "max": 65535,
           "xs": 12,
@@ -124,9 +96,7 @@
         },
         "originatorAddress": {
           "type": "number",
-          "label": {
-            "en": "Originator address"
-          },
+          "label": "Originator address",
           "min": 0,
           "max": 255,
           "xs": 12,
@@ -137,9 +107,7 @@
         },
         "cotSize": {
           "type": "select",
-          "label": {
-            "en": "Cause of transmission length"
-          },
+          "label": "Cause of transmission length",
           "options": [
             {
               "label": "1",
@@ -158,9 +126,7 @@
         },
         "commonAddressSize": {
           "type": "select",
-          "label": {
-            "en": "Common address length"
-          },
+          "label": "Common address length",
           "options": [
             {
               "label": "1",
@@ -179,9 +145,7 @@
         },
         "ioaSize": {
           "type": "select",
-          "label": {
-            "en": "Information object address length"
-          },
+          "label": "Information object address length",
           "options": [
             {
               "label": "1",
@@ -204,12 +168,8 @@
         },
         "autoGeneralInterrogation": {
           "type": "checkbox",
-          "label": {
-            "en": "General interrogation after connect"
-          },
-          "help": {
-            "en": "Master mode: send C_IC_NA_1 after STARTDT confirmation."
-          },
+          "label": "General interrogation after connect",
+          "help": "Master mode: send C_IC_NA_1 after STARTDT confirmation.",
           "xs": 12,
           "sm": 6,
           "md": 6,
@@ -218,12 +178,8 @@
         },
         "generalInterrogationIntervalMs": {
           "type": "number",
-          "label": {
-            "en": "General interrogation interval"
-          },
-          "help": {
-            "en": "0 disables periodic general interrogation."
-          },
+          "label": "General interrogation interval",
+          "help": "0 disables periodic general interrogation.",
           "min": 0,
           "xs": 12,
           "sm": 6,
@@ -235,15 +191,11 @@
     },
     "timing": {
       "type": "panel",
-      "label": {
-        "en": "Timing"
-      },
+      "label": "Timing",
       "items": {
         "connectTimeoutMs": {
           "type": "number",
-          "label": {
-            "en": "Connect timeout"
-          },
+          "label": "Connect timeout",
           "min": 1000,
           "xs": 12,
           "sm": 6,
@@ -253,9 +205,7 @@
         },
         "reconnectDelayMs": {
           "type": "number",
-          "label": {
-            "en": "Reconnect delay"
-          },
+          "label": "Reconnect delay",
           "min": 1000,
           "xs": 12,
           "sm": 6,
@@ -265,9 +215,7 @@
         },
         "t1TimeoutMs": {
           "type": "number",
-          "label": {
-            "en": "T1 acknowledgement timeout"
-          },
+          "label": "T1 acknowledgement timeout",
           "min": 1000,
           "xs": 12,
           "sm": 6,
@@ -277,9 +225,7 @@
         },
         "t2TimeoutMs": {
           "type": "number",
-          "label": {
-            "en": "T2 acknowledgement delay"
-          },
+          "label": "T2 acknowledgement delay",
           "min": 1000,
           "xs": 12,
           "sm": 6,
@@ -289,9 +235,7 @@
         },
         "t3TimeoutMs": {
           "type": "number",
-          "label": {
-            "en": "T3 test frame interval"
-          },
+          "label": "T3 test frame interval",
           "min": 1000,
           "xs": 12,
           "sm": 6,
@@ -301,9 +245,7 @@
         },
         "kWindow": {
           "type": "number",
-          "label": {
-            "en": "K send window"
-          },
+          "label": "K send window",
           "min": 1,
           "max": 32767,
           "xs": 12,
@@ -314,9 +256,7 @@
         },
         "wWindow": {
           "type": "number",
-          "label": {
-            "en": "W receive window"
-          },
+          "label": "W receive window",
           "min": 1,
           "max": 32767,
           "xs": 12,
@@ -329,15 +269,11 @@
     },
     "pointsTab": {
       "type": "panel",
-      "label": {
-        "en": "Data points"
-      },
+      "label": "Data points",
       "items": {
         "points": {
           "type": "table",
-          "label": {
-            "en": "Configured data points"
-          },
+          "label": "Configured data points",
           "import": true,
           "export": true,
           "showSecondAddAt": 10,
@@ -345,45 +281,33 @@
             {
               "attr": "enabled",
               "type": "checkbox",
-              "title": {
-                "en": "Active"
-              },
+              "title": "Active",
               "default": true,
               "width": "70px"
             },
             {
               "attr": "name",
               "type": "text",
-              "title": {
-                "en": "Name"
-              },
+              "title": "Name",
               "width": "170px"
             },
             {
               "attr": "ioa",
               "type": "number",
-              "title": {
-                "en": "IOA"
-              },
+              "title": "IOA",
               "width": "100px"
             },
             {
               "attr": "commonAddress",
               "type": "number",
-              "title": {
-                "en": "ASDU"
-              },
-              "tooltip": {
-                "en": "Optional common address for this point. Empty uses the instance common address."
-              },
+              "title": "ASDU",
+              "tooltip": "Optional common address for this point. Empty uses the instance common address.",
               "width": "100px"
             },
             {
               "attr": "type",
               "type": "select",
-              "title": {
-                "en": "Type"
-              },
+              "title": "Type",
               "width": "170px",
               "options": [
                 {
@@ -627,43 +551,33 @@
             {
               "attr": "stateId",
               "type": "text",
-              "title": {
-                "en": "ioBroker state"
-              },
+              "title": "ioBroker state",
               "width": "260px"
             },
             {
               "attr": "writable",
               "type": "checkbox",
-              "title": {
-                "en": "Writable"
-              },
+              "title": "Writable",
               "default": false,
               "width": "90px"
             },
             {
               "attr": "unit",
               "type": "text",
-              "title": {
-                "en": "Unit"
-              },
+              "title": "Unit",
               "width": "90px"
             },
             {
               "attr": "factor",
               "type": "number",
-              "title": {
-                "en": "Factor"
-              },
+              "title": "Factor",
               "default": 1,
               "width": "90px"
             },
             {
               "attr": "offset",
               "type": "number",
-              "title": {
-                "en": "Offset"
-              },
+              "title": "Offset",
               "default": 0,
               "width": "90px"
             }

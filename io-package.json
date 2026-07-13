@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "iec104",
-    "version": "0.1.23",
+    "version": "0.1.24",
     "news": {
+      "0.1.24": {
+        "en": "Completes all Admin UI translations using short-format i18n files.",
+        "de": "Vervollstaendigt alle Uebersetzungen der Admin-Oberflaeche mit i18n-Dateien im Kurzformat.",
+        "ru": "Завершает все переводы интерфейса администратора с помощью файлов i18n в коротком формате.",
+        "pt": "Conclui todas as traducoes da interface de administracao usando ficheiros i18n de formato curto.",
+        "nl": "Voltooit alle vertalingen van de beheerinterface met i18n-bestanden in kort formaat.",
+        "fr": "Complete toutes les traductions de l interface d administration avec des fichiers i18n au format court.",
+        "it": "Completa tutte le traduzioni dell interfaccia di amministrazione usando file i18n in formato breve.",
+        "es": "Completa todas las traducciones de la interfaz de administracion mediante archivos i18n de formato corto.",
+        "pl": "Uzupelnia wszystkie tlumaczenia interfejsu administratora za pomoca plikow i18n w krotkim formacie.",
+        "uk": "Завершує всі переклади інтерфейсу адміністратора за допомогою файлів i18n у короткому форматі.",
+        "zh-cn": "使用短格式 i18n 文件完成所有管理界面翻译。"
+      },
       "0.1.23": {
         "en": "Publishes the point-role fix with npm provenance using the standard ioBroker release workflow.",
         "de": "Veroeffentlicht die Datenpunktrollen-Korrektur mit npm-Provenance ueber den Standard-ioBroker-Release-Workflow.",

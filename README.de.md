@@ -172,6 +172,10 @@ Befehle werden nicht ausgefuehrt:
 
 ## Changelog
 
+### 0.1.24
+
+- Vervollstaendigt alle Uebersetzungen der Admin-Oberflaeche mit i18n-Dateien im Kurzformat.
+
 ### 0.1.23
 
 - Veroeffentlicht die Datenpunktrollen-Korrektur mit npm-Provenance ueber den Standard-ioBroker-Release-Workflow.
