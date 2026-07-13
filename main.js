@@ -486,6 +486,7 @@ class Iec104Adapter extends utils.Adapter {
 
         this.points = this.normalizePoints(this.config.points || []);
         await this.createPointObjects();
+        await this.migrateLegacyPointRoles();
         await this.subscribeConfiguredStates();
 
         if (!this.protocolConfig.enabled) {
@@ -656,6 +657,21 @@ class Iec104Adapter extends utils.Adapter {
             await this.ensureTimePointObject(point);
             await this.ensureCotPointObject(point);
             this.pointsByState.set(this.fullStateIdForPoint(point), point);
+        }
+    }
+
+    async migrateLegacyPointRoles() {
+        const objects = await this.getAdapterObjectsAsync();
+        const legacyPrefix = `${this.namespace}.points.`;
+
+        for (const [id, obj] of Object.entries(objects)) {
+            if (!id.startsWith(legacyPrefix) || !obj || obj.type !== "state" || !obj.common) continue;
+
+            const role = roleForJsType(obj.common.type, obj.common.write === true);
+            if (obj.common.role !== role) {
+                await this.extendObjectAsync(id.slice(this.namespace.length + 1), { common: { role } });
+                this.log.info(`Migrated legacy IEC-104 point role: ${id} -> ${role}`);
+            }
         }
     }
 
