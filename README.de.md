@@ -172,6 +172,10 @@ Befehle werden nicht ausgefuehrt:
 
 ## Changelog
 
+### 0.1.26
+
+- Verwendet den standardmaessigen npm-Umgebungs-Token-Fallback und haelt `common.news` innerhalb der Repository-Grenzen.
+
 ### 0.1.25
 
 - Vervollstaendigt die Uebersetzungen der technischen ASDU-Auswahltexte.

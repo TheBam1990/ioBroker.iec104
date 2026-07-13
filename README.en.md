@@ -172,6 +172,10 @@ Commands are not executed:
 
 ## Changelog
 
+### 0.1.26
+
+- Uses the standard npm environment token fallback and keeps `common.news` within repository limits.
+
 ### 0.1.25
 
 - Completes translations for technical ASDU option labels.

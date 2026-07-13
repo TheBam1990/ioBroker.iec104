@@ -49,7 +49,8 @@ jobs:
       id-token: write
     steps:
       - uses: ioBroker/testing-action-deploy@v1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           node-version: 24.x
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          npm-token: ${{ secrets.NPM_TOKEN }}

@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "iec104",
-    "version": "0.1.25",
+    "version": "0.1.26",
     "news": {
+      "0.1.26": {
+        "en": "Uses the standard npm environment token fallback and keeps the news list within repository limits.",
+        "de": "Verwendet den standardmaessigen npm-Umgebungs-Token-Fallback und haelt die News-Liste innerhalb der Repository-Grenzen.",
+        "ru": "Использует стандартный резервный токен окружения npm и сохраняет список новостей в пределах ограничений репозитория.",
+        "pt": "Usa o token de ambiente npm padrao como alternativa e mantem a lista de noticias dentro dos limites do repositorio.",
+        "nl": "Gebruikt de standaard npm-omgevingstoken als fallback en houdt de nieuwslijst binnen de repositorylimieten.",
+        "fr": "Utilise le jeton d environnement npm standard comme solution de repli et respecte les limites de la liste des actualites.",
+        "it": "Usa il token di ambiente npm standard come fallback e mantiene l elenco delle novita entro i limiti del repository.",
+        "es": "Usa el token de entorno npm estandar como alternativa y mantiene la lista de novedades dentro de los limites del repositorio.",
+        "pl": "Uzywa standardowego tokenu srodowiskowego npm jako rozwiazania awaryjnego i utrzymuje liste zmian w limitach repozytorium.",
+        "uk": "Використовує стандартний резервний токен середовища npm і зберігає список новин у межах обмежень репозиторію.",
+        "zh-cn": "使用标准 npm 环境令牌作为后备，并将新闻列表保持在仓库限制内。"
+      },
       "0.1.25": {
         "en": "Completes translations for technical ASDU option labels.",
         "de": "Vervollstaendigt die Uebersetzungen der technischen ASDU-Auswahltexte.",
@@ -80,32 +93,6 @@
         "pl": "Uzywa pomocniczych timerow adaptera ioBroker zamiast bezposrednich timerow Node.js",
         "uk": "Використовуються таймери адаптера ioBroker замість прямих таймерів Node.js",
         "zh-cn": "使用 ioBroker 适配器计时器辅助方法替代直接的 Node.js 计时器"
-      },
-      "0.1.19": {
-        "en": "Removes old unpublished changelog entries and fixes the responsive table metadata for adapter checker compatibility",
-        "de": "Entfernt alte unveroeffentlichte Changelog-Eintraege und korrigiert die responsive Tabellen-Metadaten fuer die Adapter-Checker-Kompatibilitaet",
-        "ru": "Удалены старые неопубликованные записи changelog и исправлены responsive-метаданные таблицы для adapter checker",
-        "pt": "Remove entradas antigas nao publicadas do changelog e corrige os metadados responsivos da tabela para o adapter checker",
-        "nl": "Verwijdert oude niet-gepubliceerde changelog-items en corrigeert responsieve tabelmetadata voor de adapter checker",
-        "fr": "Supprime les anciennes entrees de changelog non publiees et corrige les metadonnees responsives du tableau pour adapter checker",
-        "it": "Rimuove vecchie voci changelog non pubblicate e corregge i metadati responsive della tabella per adapter checker",
-        "es": "Elimina entradas antiguas no publicadas del changelog y corrige los metadatos responsivos de la tabla para adapter checker",
-        "pl": "Usuwa stare nieopublikowane wpisy changelog i poprawia responsywne metadane tabeli dla adapter checker",
-        "uk": "Видалено старі неопубліковані записи changelog і виправлено responsive-метадані таблиці для adapter checker",
-        "zh-cn": "移除未发布的旧 changelog 条目，并修复表格响应式元数据以兼容 adapter checker"
-      },
-      "0.1.18": {
-        "en": "Adds repository metadata, CI release automation and adapter checker compatibility for public ioBroker publication",
-        "de": "Fuegt Repository-Metadaten, CI-Release-Automatisierung und Adapter-Checker-Kompatibilitaet fuer die oeffentliche ioBroker-Veroeffentlichung hinzu",
-        "ru": "Добавлены метаданные репозитория, автоматизация CI-релиза и совместимость с adapter checker для публикации ioBroker",
-        "pt": "Adiciona metadados do repositorio, automacao de lancamento CI e compatibilidade com adapter checker para publicacao no ioBroker",
-        "nl": "Voegt repositorymetadata, CI-releaseautomatisering en adapter-checker compatibiliteit toe voor ioBroker-publicatie",
-        "fr": "Ajoute les metadonnees du depot, l'automatisation CI des versions et la compatibilite adapter checker pour la publication ioBroker",
-        "it": "Aggiunge metadati del repository, automazione CI dei rilasci e compatibilita con adapter checker per la pubblicazione ioBroker",
-        "es": "Anade metadatos del repositorio, automatizacion CI de versiones y compatibilidad con adapter checker para publicar en ioBroker",
-        "pl": "Dodaje metadane repozytorium, automatyzacje wydan CI i zgodnosc z adapter checker dla publikacji ioBroker",
-        "uk": "Додано метадані репозиторію, автоматизацію CI-релізів і сумісність з adapter checker для публікації ioBroker",
-        "zh-cn": "添加仓库元数据、CI 发布自动化以及用于 ioBroker 发布的 adapter checker 兼容性"
       }
     },
     "titleLang": {
