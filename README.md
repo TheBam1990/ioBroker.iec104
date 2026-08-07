@@ -40,6 +40,10 @@ The adapter also stores received points below `ASDU-<address>` so values from di
 
 ## Changelog
 
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.
+
 ### 0.1.26
 
 - Uses the standard npm environment token fallback and keeps `common.news` within repository limits.
