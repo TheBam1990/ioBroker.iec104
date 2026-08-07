@@ -20,12 +20,8 @@ This adapter connects ioBroker to IEC 60870-5-104. It can run as master/controll
 
 ## Installation
 
-Install a local package:
-
-```bash
-iobroker url /path/to/iobroker.iec104-0.1.17.tgz
-iobroker add iec104
-```
+Install the adapter from the ioBroker Admin interface. Open **Adapters**, search
+for `IEC 60870-5-104` and create an instance after installation.
 
 After installation, open the instance, check all point and connection settings and only then enable `Enable communication`.
 

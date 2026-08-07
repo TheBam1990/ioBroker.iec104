@@ -4,6 +4,20 @@ const net = require("node:net");
 const utils = require("@iobroker/adapter-core");
 const { roleForJsType } = require("./lib/roles");
 
+const MAX_TIMER_MS = 2_147_483_647;
+
+function clampTimer(value, fallback, minimum = 1) {
+    const parsed = Number(value);
+    if (!Number.isFinite(parsed)) return fallback;
+    return Math.min(MAX_TIMER_MS, Math.max(minimum, Math.trunc(parsed)));
+}
+
+function sanitizeStateId(value) {
+    return String(value || "")
+        .trim()
+        .replace(/[\][*,;'"´`<>\\?!\s]/g, "_");
+}
+
 const TYPE = {
     M_SP_NA_1: 1,
     M_SP_TA_1: 2,
@@ -439,15 +453,15 @@ class Iec104Adapter extends utils.Adapter {
             cotSize: Number(this.config.cotSize || 2),
             commonAddressSize: Number(this.config.commonAddressSize || 2),
             ioaSize: Number(this.config.ioaSize || 3),
-            connectTimeoutMs: Number(this.config.connectTimeoutMs || 10000),
-            reconnectDelayMs: Number(this.config.reconnectDelayMs || 10000),
-            t1TimeoutMs: Number(this.config.t1TimeoutMs || 15000),
-            t2TimeoutMs: Number(this.config.t2TimeoutMs || 10000),
-            t3TimeoutMs: Number(this.config.t3TimeoutMs || 20000),
+            connectTimeoutMs: clampTimer(this.config.connectTimeoutMs, 10000),
+            reconnectDelayMs: clampTimer(this.config.reconnectDelayMs, 10000),
+            t1TimeoutMs: clampTimer(this.config.t1TimeoutMs, 15000),
+            t2TimeoutMs: clampTimer(this.config.t2TimeoutMs, 10000),
+            t3TimeoutMs: clampTimer(this.config.t3TimeoutMs, 20000),
             kWindow: Number(this.config.kWindow || 12),
             wWindow: Number(this.config.wWindow || 8),
             autoGeneralInterrogation: this.config.autoGeneralInterrogation !== false,
-            generalInterrogationIntervalMs: Number(this.config.generalInterrogationIntervalMs || 0),
+            generalInterrogationIntervalMs: clampTimer(this.config.generalInterrogationIntervalMs, 0, 0),
             readOnly: this.config.readOnly !== false,
         };
     }
@@ -474,7 +488,7 @@ class Iec104Adapter extends utils.Adapter {
                 name: "Trigger general interrogation",
                 type: "boolean",
                 role: "button",
-                read: true,
+                read: false,
                 write: true,
                 def: false,
             },
@@ -554,7 +568,7 @@ class Iec104Adapter extends utils.Adapter {
                 name: String(point.name || `IOA ${point.ioa}`),
                 ioa: Number(point.ioa),
                 type: String(point.type || "M_ME_NC_1"),
-                stateId: String(point.stateId || "").trim(),
+                stateId: sanitizeStateId(point.stateId),
                 writable: point.writable === true || point.writable === "true",
                 unit: String(point.unit || ""),
                 factor: Number(point.factor || 1),

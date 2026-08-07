@@ -40,6 +40,11 @@ The adapter also stores received points below `ASDU-<address>` so values from di
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+
+- Correct button-state metadata, sanitize configured state IDs and clamp all configurable timer values.
+- Require Admin >= 7.8.23 and update repository maintenance configuration.
+
 ### 0.1.26
 
 - Uses the standard npm environment token fallback and keeps `common.news` within repository limits.
