@@ -86,6 +86,8 @@ The adapter also stores received points below `ASDU-<address>` so values from di
 
 Older entries are available in [CHANGELOG_OLD.md](CHANGELOG_OLD.md).
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 Copyright (c) 2026 TheBam1990
