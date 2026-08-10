@@ -122,7 +122,7 @@
       "zh-cn": "IEC 60870-5-104 主站/从站适配器，支持总召唤和可配置数据点。"
     },
     "authors": [
-      "TheBam1990"
+      "TheBam <elektrobam@gmx.de>"
     ],
     "keywords": [
       "iec104",
